@@ -1,12 +1,8 @@
 package Modules;
 
-public class Ingredients_Stock extends Stock{ 
+public class Ingredients extends Items{ 
     
-    public void addIngredient(String ingredient, int quantity){ 
-        addItem(ingredient, quantity);
+    public Ingredients(String name, int quantity){ //construtor tem que ter o nome da classe
+        super(name, quantity);
     }; 
-     
-    public void removeIngredient(String ingredient, int quantity) {
-        removeItem(ingredient, quantity);
-    }
 }
