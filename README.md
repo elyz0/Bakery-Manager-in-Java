@@ -1,6 +1,6 @@
 # Bakery-Manager---Java 
 
-**Bakery Manager** é um sistema de gerenciamento de estoque, produtos, finanças... para confeitaria/padaria, desenvolvido em Java. Este sistema tem como objetivo controlar a entrada e saída de materiais, produtos prontos, caixa... garantindo um fluxo eficiente no gerenciamento.
+**Bakery Manager** é um sistema de gerenciamento para uma confeitaria/padaria com funções de estoque, produtos, finanças, funcionários, vitrine e etc, desenvolvido em Java. Este sistema tem como objetivo controlar a entrada e saída de materiais e de produtos prontos, caixa... garantindo um fluxo eficiente no gerenciamento.
 
 ## **Funcionalidades**
 
@@ -16,11 +16,14 @@ Gerencia os produtos prontos e preparados na cozinha e vitrine, permitindo contr
 Controla a entrada e saída dos ingredientes, ajudando a verificar se algum item está acabando e precisa ser reabastecido.
 
 ### 4. **Entrada e Saída da Vitrine**
-Controla a entrada e saída de produtos na vitrine, permitindo saber quando algum item está acabando e precisa ser produzido.
+Controla a entrada e saída de produtos na vitrine, permitindo saber quando algum item está acabando e precisa ser produzido. 
+ 
+### 5. **Produtos mais vendidos e dias** 
+Fornece relatórios sobre quais foram os produtos mais vendidos, em quais dias houve mais vendas, o que mais vendeu em um determinado dia, permitindo planejar as produções.
 
 ## **Tecnologias Utilizadas**
 - **Linguagem de Programação**: Java
-- **Desenvolvimento**: Ambiente de desenvolvimento Java padrão (Visual Studio Code) e Scene Builder
+- **Desenvolvimento**: Ambiente de desenvolvimento Java padrão (Visual Studio Code)
 
 ## **Como Rodar o Projeto**
 
@@ -31,13 +34,22 @@ bash
 git clone 
 
 ## **Estrutura de Diretórios**
-│   ├── Main.java            # Ponto de entrada do sistema   
-│   ├── StockManager.java    # Lógica de gerenciamento de estoque  
-│   ├── Ingredients.java     # Classe de materiais (ingredientes)  
-│   ├── Recipes.java         # Classe de receitas de produtos prontos  
-│   └── Showcase.java        # Classe de controle da vitrine  
-├── README.md               # Este arquivo  
-└── .gitignore              # Arquivo de configuração do Git 
+bakery - java
+├── database
+├── main
+│   └── Main.java              # Ponto de entrada do sistema
+├── model
+│   ├── Ingredients.java       # Classe que define materiais (ingredientes)
+│   └── Product.java           # Classe que define os produtos
+├── services
+│   ├── InventoryManager.java  # Lógica de gerenciamento de estoque e controle de itens 
+│   ├── Items.java             # Classe base para itens no sistema
+│   ├── Sales.java             # Classe para gerenciamento de vendas
+│   ├── Showcase.java          # Controle da vitrine (produtos prontos para exibição)
+│   └── Stock.java             # Controle do estoque (incluindo ingredientes e produtos)
+├── README.md                  # Arquivo de documentação do projeto
+└── .gitignore                 # Arquivo de configuração para o Git
+
 
 ## **Como Contribuir**
 Contribuições são bem-vindas! Se você quiser melhorar este projeto, siga as etapas abaixo:
