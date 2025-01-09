@@ -1,12 +1,14 @@
-package Modules;
+package Services;
 
 public class Items {
     private String name;
-    private int quantity;
+    private int quantity; 
+    private double price;
 
-    public Items(String name, int quantity) {
+    public Items(String name, int quantity, double price) {
         this.name = name;
-        this.quantity = quantity;
+        this.quantity = quantity; 
+        this.price = price;
     }
 
     public String getName() {

@@ -1,7 +1,9 @@
+package Main;
 import java.util.HashMap;
 import java.util.Map;
 
-import Modules.Stock;
+import Model.Product;
+import Services.Stock;
 
 public class Main{ 
     public static void main(){ //Quando executado o JVM procura por um método com exatamente esta assinatura
@@ -19,6 +21,10 @@ public class Main{
         cakeRecipe.put("Açúcar", 1);
 
         // Adicionando a receita ao estoque
-        stock.addRecipe(cakeRecipe, "Bolo");
+        stock.addRecipe(cakeRecipe, "Bolo"); 
+ 
+        Map<String, Product> items = new HashMap<>();
+        items.put("Bolo de Chocolate", new Product("Bolo de Chocolate", 25, 10));
+        items.put("Pastel de Nata", new Product("Pastel de Nata", 5, 5));
     }
 }
