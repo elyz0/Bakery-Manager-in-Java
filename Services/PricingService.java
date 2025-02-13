@@ -2,7 +2,10 @@ package Services;
 
 import java.util.Map;
 import java.util.Scanner;
+<<<<<<< HEAD
 import Model.Recipe; 
+=======
+>>>>>>> eb9a2181ebc760ce75819cb3e0c7a8d0621240b6
 
 public class PricingService { 
 
@@ -21,8 +24,13 @@ public class PricingService {
             String resposta = scanner.nextLine().trim().toLowerCase(); //nextLine lê a próxima linha digitad apelo usuário, trim remove espaços em branco e toLowerCase converte para minúsculo.
           
             if(resposta.equals("s")){  
+<<<<<<< HEAD
                 Map<String, Integer> ingredients = coletarIngredientes();
                 recipeManager.addRecipe(ingredients, productName, bakingTime); 
+=======
+                 Map<String, Integer> ingredients = coletarIngredientes();
+                recipeManager.addRecipe(ingredients, productName); 
+>>>>>>> eb9a2181ebc760ce75819cb3e0c7a8d0621240b6
                 System.out.println("Receita para o produto '" + productName + "' adicionada com sucesso.");
             }
         }
