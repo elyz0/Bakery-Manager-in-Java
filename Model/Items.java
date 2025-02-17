@@ -1,4 +1,4 @@
-package Services;
+package Model;
 
 public class Items {
     private String name;
@@ -17,6 +17,10 @@ public class Items {
 
     public int getQuantity() {
         return quantity;
+    } 
+
+    public double getPrice() {
+        return price;
     }
 
     public void addQuantity(int quantity) {

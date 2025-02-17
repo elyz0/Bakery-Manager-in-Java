@@ -3,8 +3,10 @@ package Services;
 import java.util.HashMap;
 import java.util.Map;
 
+import Model.Items;
+
 public class Stock {
-    private Map<String, Items> items = new HashMap<>(); /* HashMap não garante a ordem das chaves mas tem melhor desempenho */
+    static Map<String, Items> items = new HashMap<>(); /* HashMap não garante a ordem das chaves mas tem melhor desempenho */
     private Map<String, Map<String, Integer>> recipes = new HashMap<>(); // Armazena as receitas  
     
     //Método para adicionar itens (ingredientes e produtos) ao estoque  
@@ -31,7 +33,7 @@ public class Stock {
     } 
       
     //Método para armazenar a receita de um produto, ela utiliza os ingredientes do estoque
-    public void addRecipe(Map<String, Integer> ingredients, String productName) {
+    public void addRecipe(Map<String, Integer> ingredients, String productName, int BakingTime) {
         recipes.put(productName, ingredients);
     } 
      

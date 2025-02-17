@@ -21,7 +21,7 @@ public class Main{
         cakeRecipe.put("Açúcar", 1);
 
         // Adicionando a receita ao estoque
-        stock.addRecipe(cakeRecipe, "Bolo"); 
+        stock.addRecipe(cakeRecipe, "Bolo", 0); 
  
         Map<String, Product> items = new HashMap<>();
         items.put("Bolo de Chocolate", new Product("Bolo de Chocolate", 25, 10));
