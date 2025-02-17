@@ -1,4 +1,6 @@
 # Bakery-Manager---Java 
+ 
+**(Projeto com fim de aprendizado)** 
 
 **Bakery Manager** é um sistema de gerenciamento para uma confeitaria/padaria com funções de estoque, produtos, finanças, funcionários, vitrine e etc, desenvolvido em Java. Este sistema tem como objetivo controlar a entrada e saída de materiais e de produtos prontos, caixa... garantindo um fluxo eficiente no gerenciamento.
 
