@@ -4,12 +4,12 @@ import java.util.Map;
 
 public class Recipe {
     private String recipeName; 
-    private Map<String, Integer> ingredients; // Ingrediente e quantidade 
+    private Map<String, Integer> ingredientsForRecipe; // Ingrediente e quantidade 
     private int bakingTime; 
      
-    public Recipe(String recipeName, Map<String, Integer> ingredients, int bakingTime) {
+    public Recipe(String recipeName, Map<String, Integer> ingredientsForRecipe, int bakingTime) {
         this.recipeName = recipeName;
-        this.ingredients = ingredients;
+        this.ingredientsForRecipe = ingredientsForRecipe;
         this.bakingTime = bakingTime;
     } 
      
@@ -18,7 +18,7 @@ public class Recipe {
     }
 
     public Map<String, Integer> getIngredients() {
-        return ingredients;
+        return ingredientsForRecipe;
     }
 
     public int getBakingTime() {
@@ -27,6 +27,6 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return "Receita: " + recipeName + ", Tempo de preparo: " + bakingTime + " minutos, Ingredientes: " + ingredients;
+        return "Receita: " + recipeName + ", Tempo de preparo: " + bakingTime + " minutos, Ingredientes: " + ingredientsForRecipe;
     }
 }
