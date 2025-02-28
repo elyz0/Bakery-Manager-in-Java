@@ -5,17 +5,32 @@ import java.util.Map;
 import java.util.Scanner;
 //Classes no mesmo pacote não precisam ser importadas 
 
+import Model.Items;
+
 public class PricingService { 
 
     RecipeManager recipeManager;  
-    Stock stock; 
+    InventoryManager inventory; 
     private Scanner scanner;
 
-    public PricingService(RecipeManager recipeManager, Stock stock, Scanner scanner) {
+    public PricingService(RecipeManager recipeManager, InventoryManager inventory, Scanner scanner) {
         this.recipeManager = recipeManager;  //this diferencia variáveis locais (definidas dentro de um método) e campos da classe (variáveis de instância), usado para mostra que está acessando um campo da classe
         this.scanner = scanner; //System.in é a entrada padrão do sistema  
-        this.stock = stock;
+        this.inventory = inventory;
     } 
+ 
+     //Método para obter o preço do ingrediente 
+    public double getPrice(String ingredientName) {  
+
+        Items item = inventory.getItem(ingredientName); 
+
+        if (item != null) {
+            return item.getPrice();  // Já podemos acessar getPrice() diretamente porque está na classe base (Items)
+        } else {
+            return 0.0;  // Se o item não existir, retorna 0.0
+        } 
+
+    }  
 
     public double calculateProductPrice(String productName, double profitMargin){  
          
@@ -44,7 +59,7 @@ public class PricingService {
             String ingredientName = entry.getKey(); //Nome do ingrediente  
             int quantity = entry.getValue(); //Quantidade do ingrediente 
              
-            double price = stock.getPrice(ingredientName); 
+            double price = getPrice(ingredientName); //Obtem o preço do ingrediente
 
             double ingredientCost = price * quantity;
             totalCost += ingredientCost; // Adiciona o custo do ingrediente ao custo total

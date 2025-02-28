@@ -1,10 +1,11 @@
 package Services;
 
+import java.util.HashMap;
 import java.util.Map;
 import Model.Product;
 
 public class Showcase {
-    private Map<String, Product> showcase;
+    private Map<String, Product> showcase = new HashMap<>();
      
     //Método para adicionar os Products à vitrine 
     public void addToShowcase(Map <String, Product> items, String itemName ){ 
