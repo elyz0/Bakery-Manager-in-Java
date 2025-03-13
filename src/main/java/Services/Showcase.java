@@ -1,7 +1,8 @@
 package Services;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Map;  
+ 
 import Model.Product;
 
 public class Showcase {

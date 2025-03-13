@@ -1,0 +1,12 @@
+Model\Product.class
+controller\HelloController.class
+Services\InventoryManager.class
+Model\Recipe.class
+Services\PricingService.class
+Main\BakeryManagerApplication.class
+Main\Main.class
+Services\RecipeManager.class
+Services\Showcase.class
+Model\Items.class
+Services\Sales.class
+Model\Ingredients.class

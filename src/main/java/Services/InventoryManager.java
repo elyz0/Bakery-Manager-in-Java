@@ -3,11 +3,10 @@ package Services;
 import java.util.HashMap;
 import java.util.Map;
 
-import Model.Items;
+import Model.Items; 
 
 public class InventoryManager {
     static Map<String, Items> items = new HashMap<>(); /* HashMap não garante a ordem das chaves mas tem melhor desempenho */
-    private Map<String, Map<String, Integer>> recipes = new HashMap<>(); // Armazena as receitas  
     
     //Método para adicionar itens (ingredientes e produtos) ao estoque  
     public void addItem(String itemName, int quantity) { 

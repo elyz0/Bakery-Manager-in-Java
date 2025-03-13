@@ -3,7 +3,6 @@ package Services;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-//Classes no mesmo pacote não precisam ser importadas 
 
 import Model.Items;
 
