@@ -1,4 +1,4 @@
-package Model;
+package BakeryManager.Model;
 
 public class Items {
     private String name;

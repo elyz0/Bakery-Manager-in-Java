@@ -1,9 +1,9 @@
-package Services;
+package BakeryManager.Services;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import Model.Items; 
+import BakeryManager.Model.Items; 
 
 public class InventoryManager {
     static Map<String, Items> items = new HashMap<>(); /* HashMap não garante a ordem das chaves mas tem melhor desempenho */

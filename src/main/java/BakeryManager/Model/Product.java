@@ -1,4 +1,4 @@
-package Model;
+package BakeryManager.Model;
  
 //É a receita já produzida (Comidas para irem a vitrine)
 public class Product extends Items{ 

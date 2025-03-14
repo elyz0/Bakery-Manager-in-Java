@@ -1,9 +1,9 @@
-package Services;
+package BakeryManager.Services;
 
 import java.util.HashMap;
-import java.util.Map;  
- 
-import Model.Product;
+import java.util.Map;
+
+import BakeryManager.Model.Product;
 
 public class Showcase {
     private Map<String, Product> showcase = new HashMap<>();

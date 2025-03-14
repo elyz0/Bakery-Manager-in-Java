@@ -3,8 +3,7 @@ controller\HelloController.class
 Services\InventoryManager.class
 Model\Recipe.class
 Services\PricingService.class
-Main\BakeryManagerApplication.class
-Main\Main.class
+BakeryManager\Application.class
 Services\RecipeManager.class
 Services\Showcase.class
 Model\Items.class

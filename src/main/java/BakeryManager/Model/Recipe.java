@@ -1,4 +1,4 @@
-package Model;
+package BakeryManager.Model;
 
 import java.util.Map;
 

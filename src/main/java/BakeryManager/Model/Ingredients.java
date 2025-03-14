@@ -1,4 +1,4 @@
-package Model;
+package BakeryManager.Model;
  
 //São os ingredientes que estarão no estoque da bakery. Necessário adicionar a quantidade e o valor por qual foi comprado.
 public class Ingredients extends Items{ 
