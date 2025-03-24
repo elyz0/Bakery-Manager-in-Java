@@ -1,20 +1,21 @@
 package BakeryManager.services;
- 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
+  
 import BakeryManager.model.Items;
 
+import org.aspectj.weaver.ast.Not;
+import org.springframework.stereotype.Service; 
+
+import java.util.HashMap;
+import java.util.Map;
+ 
+@Service
 public class PricingService { 
 
     RecipeManager recipeManager;  
     InventoryManager inventory; 
-    private Scanner scanner;
 
-    public PricingService(RecipeManager recipeManager, InventoryManager inventory, Scanner scanner) {
+    public PricingService(RecipeManager recipeManager, InventoryManager inventory) {
         this.recipeManager = recipeManager;  //this diferencia variáveis locais (definidas dentro de um método) e campos da classe (variáveis de instância), usado para mostra que está acessando um campo da classe
-        this.scanner = scanner; //System.in é a entrada padrão do sistema  
         this.inventory = inventory;
     } 
  
@@ -33,11 +34,9 @@ public class PricingService {
 
     public double calculateProductPrice(String productName, double profitMargin){  
          
-        //Verifica se a receita já existe
+        /* Problemas da antiga forma: O serviço estava acoplado a interações de console, o gerenciamento manual da criação de receitas e o uso de valor especial (-1) para indicar erro.
         if (recipeManager.getRecipe(productName) == null) { //Esse if é para caso não exista receita então o hasRecipe retorna false e o ! inverte para true e o if é executado
             System.out.println("A receita para o produto '" + productName + "' não foi encontrada. Deseja adicionar a receita para o produto '" + productName + "'? (s/n): ");
-            String resposta = scanner.nextLine().trim().toLowerCase(); //nextLine lê a próxima linha digitad apelo usuário, trim remove espaços em branco e toLowerCase converte para minúsculo.
-          
             if(resposta.equals("s")){  
                 Map<String, Integer> ingredientsForRecipe = new HashMap<>(); 
                 recipeManager.addRecipe(ingredientsForRecipe, productName, 0); 
@@ -47,8 +46,13 @@ public class PricingService {
         else{ 
             System.out.println("Não foi possível calcular o preço sem a receita.");
             return -1;  // Retorna um valor indicando erro
-        } 
-          
+        }*/
+           
+        //Verifica se a receita já existe  
+        if (!recipeManager.hasRecipe(productName)) {
+            throw new IllegalArgumentException("Receita para o produto '" + productName + "' não encontrada"); //APIs REST normalmente usam códigos HTTP para comunicação de estados e a exceção será convertida em uma resposta HTTP adequada (ex: 404 Not Found)
+        }
+
         //Obtem a receita
         Map<String, Integer> recipe = recipeManager.getRecipe(productName);
         double totalCost = 0; 
