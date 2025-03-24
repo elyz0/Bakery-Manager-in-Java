@@ -3,9 +3,12 @@ package BakeryManager.services;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import org.springframework.stereotype.Service;
  
 /*Gerencia a adição de novas receitas ao sistema, interage com a classe Stock para garantir que os ingredientes usados estejam no estoque. Se um ingrediente não existir, o usuário tem a opção de adicioná-lo.*/
  
+@Service
 public class RecipeManager{ 
     private InventoryManager inventory;  //Armazena a referência a um objeto de Stock que já foi criado. Só existe um objeto/instância então não precisa especificar 
     private Scanner scanner; //Declarar o Scanner como um atributo permite que ele seja acessado em todos os métodos da classe, sem precisar criar um novo Scanner toda vez. 
@@ -65,5 +68,10 @@ public class RecipeManager{
     // Método para obter uma receita
     public Map<String, Integer> getRecipe(String recipeName) { 
         return recipes.getOrDefault(recipeName, null); 
-    } 
+    }  
+     
+    // Método para verificar se uma receita existe
+    public boolean hasRecipe(String recipeName) {
+        return recipes.containsKey(recipeName);
+    }
 }

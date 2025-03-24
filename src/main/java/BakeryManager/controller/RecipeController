@@ -1,0 +1,33 @@
+package BakeryManager.controller;
+
+import BakeryManager.services.RecipeManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping("/recipes")
+public class RecipeController{
+
+    @Autowired
+    private RecipeManager recipeManager;
+
+    @PostMapping("/add")
+    public String addRecipe(@RequestParam String recipeName,
+                           @RequestBody Map<String, Integer> ingredients,
+                           @RequestParam int bakingTime) {
+        recipeManager.addRecipe(ingredients, recipeName, bakingTime);
+        return "Receita '" + recipeName + "' adicionada com sucesso!";
+    }
+
+    @GetMapping("/{recipeName}")
+    public Map<String, Integer> getRecipe(@PathVariable String recipeName) {
+        return recipeManager.getRecipe(recipeName);
+    }
+
+    @GetMapping("/exists/{recipeName}")
+    public boolean recipeExists(@PathVariable String recipeName) {
+        return recipeManager.hasRecipe(recipeName);
+    }
+}
