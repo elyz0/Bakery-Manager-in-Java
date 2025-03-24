@@ -1,4 +1,4 @@
-package BakeryManager.Services;
+package BakeryManager.services;
 
 import java.util.HashMap;
 import java.util.Map;

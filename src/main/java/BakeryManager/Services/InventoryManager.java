@@ -1,10 +1,13 @@
-package BakeryManager.Services;
-
+package BakeryManager.services;
+   
 import java.util.HashMap;
 import java.util.Map;
 
-import BakeryManager.Model.Items; 
+import org.springframework.stereotype.Service;
 
+import BakeryManager.model.Items;
+
+@Service //Indica que esta classe é um serviço gerenciado pelo Spring
 public class InventoryManager {
     static Map<String, Items> items = new HashMap<>(); /* HashMap não garante a ordem das chaves mas tem melhor desempenho */
     

@@ -1,10 +1,10 @@
-package BakeryManager.Services;
+package BakeryManager.services;
  
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import BakeryManager.Model.Items;
+import BakeryManager.model.Items;
 
 public class PricingService { 
 

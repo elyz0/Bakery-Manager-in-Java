@@ -31,48 +31,60 @@
 	</properties> 
 
 	<dependencies>
-	 	<dependency>
+	  	<!--fornecendo autoconfiguração e suporte para aplicações Spring Boot. Necessário para qualquer aplicação Spring Boot.-->
+	  	<dependency>
         	<groupId>org.springframework.boot</groupId>
         	<artifactId>spring-boot-starter</artifactId>
-   		</dependency>
+   		</dependency> 
+		<!-- Fornece suporte para o uso do JPA (Java Persistence API) com Spring Data, permitindo a integração com bancos de dados relacionais. -->
 	 	<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>  
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
 		</dependency>
+		<!-- Spring Boot Starter Web (opcional, se você estiver criando uma aplicação web) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- Ferramentas de desenvolvimento que facilitam a reinicialização automática e outras funcionalidades durante o desenvolvimento. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+		</dependency>  
+		<!--  Biblioteca que reduz a verbosidade do código Java, gerando automaticamente getters, setters, construtores, etc. -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-		</dependency>
+		</dependency> 
+		<!-- Fornece suporte para testes com Spring Boot, incluindo JUnit, Mockito, e outras bibliotecas de teste. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency> 
+		</dependency>  
+		<!-- Fornece o núcleo do Spring Framework, incluindo suporte para injeção de dependências e gerenciamento de beans. -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-		</dependency>
+		</dependency> 
+		<!-- Biblioteca central do Spring Framework, fornecendo funcionalidades básicas como injeção de dependências. -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-		</dependency>
+		</dependency>  
+		<!-- Fornece endpoints de monitoramento e gerenciamento para aplicações Spring Boot. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+    	</dependency>
 	</dependencies>
 
 	<build>
