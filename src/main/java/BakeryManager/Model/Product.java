@@ -4,7 +4,8 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity 
-@DiscriminatorValue("PRODUCT") //Valor do discriminador para Product
+@DiscriminatorValue("PRODUCT") //Valor do discriminador para Product 
+//@Table(name = "BM_PRODUCT")
 public class Product extends Items{ 
     //É a receita já produzida (Comidas para irem a vitrine)
     
