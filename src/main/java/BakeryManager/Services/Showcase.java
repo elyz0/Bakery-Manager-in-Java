@@ -1,30 +1,44 @@
 package BakeryManager.services;
+ 
+import BakeryManager.model.Product;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import BakeryManager.model.Product;
-
+@Service
 public class Showcase {
     private Map<String, Product> showcase = new HashMap<>();
      
-    //Método para adicionar os Products à vitrine 
-    public void addToShowcase(Map <String, Product> items, String itemName ){ 
-        Product products = items.get(itemName);  
+    //Método para adicionar os Products à vitrine (retorna mensagem de sucesso/erro)
+    public String addToShowcase(Product products){ 
          
         if(products != null && products.getQuantity() > 0){ 
-            showcase.put(itemName, products);
-            System.out.println(products.getName() + " foi adicionado à vitrine.");
+            showcase.put(products.getName(), products);
+            return products.getName() + " foi adicionado à vitrine.";
         }  
         else {
-            System.out.println("Item não encontrado ou sem estoque: " + itemName);
+            return "Produto inválido ou sem estoque: " + (products != null ? products.getName() : "null");
         }
     } 
      
-    public void displayShowcase(){ 
-        System.out.println("Vitrine do dia:");
-        for (Product product : showcase.values()) {
-            System.out.println(product);
+    //Método para exibir a vitrine
+    public Map<String, Product> displayShowcase() {
+        return new HashMap<>(showcase); //Retorna uma cópia para evitar modificações externas
+    }
+
+    //Método para limpar a vitrine
+    public void clearShowcase() {
+        showcase.clear();
+    } 
+      
+    // Remove um produto específico da vitrine
+    public String removeFromShowcase(String productName) {
+        if (showcase.containsKey(productName)) {
+            showcase.remove(productName);
+            return productName + " removido da vitrine.";
+        } else {
+            return "Produto não encontrado: " + productName;
         }
     }
 }
